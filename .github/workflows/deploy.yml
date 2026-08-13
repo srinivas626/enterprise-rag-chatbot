@@ -13,7 +13,7 @@ env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: rag-chatbot
   ECS_CLUSTER: rag-chatbot-cluster
-  ECS_SERVICE: rag-chatbot-service
+  ECS_SERVICE: rag-chatbot-service-oegvoi17
   ECS_TASK_FAMILY: rag-chatbot
   CONTAINER_NAME: rag-chatbot
 
