@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 
 from app.services.rag_service import ask_question
+from app.auth.dependencies import require_user
+from app.models.user import User
 
 
 router=APIRouter()
@@ -15,7 +17,8 @@ class Question(BaseModel):
 
 @router.post("/chat")
 def chat(
-    request:Question
+    request:Question,
+    user: User = Depends(require_user)
 ):
 
     answer=ask_question(
